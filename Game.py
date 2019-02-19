@@ -235,6 +235,14 @@ def gamelost(x):
             x.update({"Year": x.get("Year") + 1})
         return accept
 
+def r(e):
+    name = input('Введите имя пользователя на англ: ')
+    f = open('rate.txt', 'w')
+    res = rate(e) #тут значение должно быть
+    f.write(str(res) + ' ')
+    f.write(name + '\n')
+    f.close()
+
 def main():
     n = int(input("Choose difficulty(1-4): "))
     print("Your difficulty is", n, "and status of your kingdom is: ")
@@ -250,9 +258,8 @@ def main():
         print("Your score is", rate(sts) * n)
         print("Status of your kingdom is:")
         print(sts)
-
         accept = gamelost(sts)
-
+    r(sts)
 
 
 if __name__ == "__main__":
