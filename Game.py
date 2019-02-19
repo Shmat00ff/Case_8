@@ -1,3 +1,9 @@
+"""Case-study #7 Генерация предложений
+Разработчики:
+Bayanova A. 60%, Shmatov D. 80%
+"""
+
+
 from random import *
 from math import *
 def difficulty(n):
