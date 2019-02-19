@@ -101,10 +101,32 @@ def war(x):
                 x.update({"Territory": floor(ter)})
                 x.update({"Army": floor(army)})
 
+def prod(d):
+    p = randint(20,70)
+    pr = int(input('У вас хотят купить пшеницу за'+ p + 'рублей. Сколько продать? '))
+    # достать значение из словаря и вычесть пшеницу, добавить деньги
+    c = d["Corn"] - pr
+    t = d["Treasure"] + (p*pr)
+    d.update({"Corn": s})
+    d.update({"Treasure": t})
+
+def bye(d):
+    p = randint(20, 70)
+    pr = int(input('Вам хотят продать пшеницу за' + p + 'рублей. Сколько купить? '))
+    # достать значение из словаря и вычесть деньги, добавить пшеницу
+    c = d["Corn"] + pr
+    t = d["Treasure"] - (p * pr)
+    d.update({"Corn": s})
+    d.update({"Treasure": t})
+
 def main():
     n = difficulty()
     m = event(n)
     print(m)
+
+def rate():
+    rt = (d["Corn"] / 100 + (d["Army"] + d["People"])/ 10 + / d["Terrirory"]/ 10 + d["Treasure"]/ 1000 / d["Anxiety"]) * year * n
+    return rt
 
 if __name__ == "__main__":
     main()
