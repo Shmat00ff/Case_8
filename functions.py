@@ -1,7 +1,7 @@
 from random import *
 from math import *
-def difficulty():
-    n = int(input("choose difficulty(1-4): "))
+def difficulty(n):
+
     d = {}
     if n == 1:
         d.update({"Corn": 10500})
@@ -10,7 +10,6 @@ def difficulty():
         d.update({"Treasure": 10000})
         d.update({"Army": 50})
         d.update({"Anxiety": 5})
-        d.update({"Friends": 0})
         d.update({"Year": 0})
     elif n == 2:
         d.update({"Corn": 9500})
@@ -19,7 +18,6 @@ def difficulty():
         d.update({"Treasure": 8000})
         d.update({"Army": 45})
         d.update({"Anxiety": 10})
-        d.update({"Friends": 0})
         d.update({"Year": 0})
     elif n == 3:
         d.update({"Corn": 8000})
@@ -28,7 +26,6 @@ def difficulty():
         d.update({"Treasure": 6000})
         d.update({"Army": 40})
         d.update({"Anxiety": 20})
-        d.update({"Friends": 0})
         d.update({"Year": 0})
     elif n == 4:
         d.update({"Corn": 6500})
@@ -37,7 +34,6 @@ def difficulty():
         d.update({"Treasure": 5000})
         d.update({"Army": 30})
         d.update({"Anxiety": 40})
-        d.update({"Friends": 0})
         d.update({"Year": 0})
     else:
         print("You write a wrong number,fool.")
@@ -120,12 +116,14 @@ def bye(d):
     d.update({"Treasure": t})
 
 def main():
-    n = difficulty()
-    m = event(n)
+    n = int(input("choose difficulty(1-4): "))
+    q = difficulty(n)
+    m = event(q)
     print(m)
+    print(rate(m) * n)
 
-def rate():
-    rt = (d["Corn"] / 100 + (d["Army"] + d["People"])/ 10 + / d["Terrirory"]/ 10 + d["Treasure"]/ 1000 / d["Anxiety"]) * year * n
+def rate(m):
+    rt = (m["Corn"] / 100 + (m["Army"] + m["People"])/ 10 +  m["Territory"]/ 10 + m["Treasure"]/ 1000 / m["Anxiety"]) * m["Year"]
     return rt
 
 if __name__ == "__main__":
